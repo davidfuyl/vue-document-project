@@ -1,0 +1,493 @@
+<!--
+//复制数组
+                let arr = [1,2,3,4];
+                let copy = [...arr];
+                console.log(`copy is : ${copy}`);
+
+                //合并多个数组
+                let arr1 = ['apple', 'peach', 'pear', 'banana', 'cherry'];
+                let arr2 = ['bear', 'rabbit', 'sheep', 'dog', 'cat'];
+                let mergeAry = [...arr1, ...arr2];
+                console.log(`The mergeAry is ${mergeAry}`);
+
+                //复制对象
+                let obj = {a: 1, b: 2, c: 3};
+                let copyObj = {...obj};
+                console.log(`The copyObj is: ${JSON.stringify(copyObj)}`);
+
+                //合并对象
+                let obj1 = {a: 1, b: 2, c: 3};
+                let obj2 = {d: 4, e: 5, f: 6};
+                let merge = {...obj1, ...obj2}
+                console.log(`The merge obj is ${JSON.stringify(merge)}`);
+
+                //使用数组传递多个参数
+                // let args = [1, 2, 3];
+                // passArguments(...args);
+                // const ele = document.querySelector('#clickme');
+                const targetObj = {
+                    a: 1,
+                    src: 'www.baidu.com',
+                    onclick() {
+                        alert('hello');
+                    }
+                }   
+                let sourceObj = {
+                    name: 'tom',
+                    age: 20,
+                    gender: 'female',
+                    category: {
+                        score: '',
+                        science: {
+                            math: 90,
+                            chemistry: 80
+                        }
+                    }
+                    getName() {
+                        alert('name');
+                    }
+                }
+                for (let objItems in sourceObj) {
+                    console.log(objItems);
+                }
+
+                let response = [
+                    {'name': 'tom', 'age': 20, 'gender': 'male', 
+                        'category': {
+                            'score': 90,
+                            'science': {
+                                'math': 90,
+                                'level': 'high'
+                             }
+                         }
+                    },
+                    {'name': 'David', 'age': 30, 'gender': 'male1', 
+                        'category': {
+                            'score': 85,
+                            'science': {
+                                'math': 75,
+                                'level': 'high1'
+                             }
+                         }
+                    },
+                    {'name': 'David2', 'age': 35, 'gender': 'male2', 
+                        'category': {
+                            'score': 75,
+                            'science': {
+                                'math': 15,
+                                'level': 'high2'
+                             }
+                         }
+                    },
+                    {'name': 'David3', 'age': 351, 'gender': 'male3', 
+                        'category': {
+                            'score': 55,
+                            'science': {
+                                'math': 25,
+                                'level': 'high3'
+                             }
+                         }
+                    },
+                    {'name': 'David4', 'age': 354, 'gender': 'male5', 
+                        'category': {
+                            'score': 551,
+                            'science': {
+                                'math': 251,
+                                'level': 'high31'
+                             }
+                         }
+                    }
+                ]
+
+                for (let i in response) {
+                   if(response[i].category.science.level === 'high31') {
+                       console.log(`hello i find you ${response[i].category.science.level}`);
+                   }
+                }
+
+                for (let value of response) {
+                    console.log(value.category.science.level);
+                }
+                let bookName = 'javascript';
+
+                console.log(`The ${bookName} lists below items:
+                1. one
+                2. two
+                3. three`);
+
+                let ary = ['one','two','three'];
+                for (let i=0; i<ary.length; i++) {
+                    console.log(ary[i]); // one two three
+                }
+
+                let ary = new Array(); // 用 new 关键子创建一个空数组
+                console.log(ary.length);// 0
+                let ary1 = new Array(3); // 用new 关键字创建一个指定长度的数组
+                console.log(ary1); // 3
+
+                let ary2 = []; // 推荐使用这种方式创建数组，简洁，方便
+                let ary3 = ['one','two','three'] // 创建一个数组并指定元素
+
+                let ary = [1, 2, 3, 4, 5];
+                ary.push(6);
+                console.log(ary);
+
+                let numbers = [0, 1, 2];
+                // numbers[numbers.length] = 3;
+                // console.log(numbers); // (4) [0, 1, 2, 3]
+                numbers.push(3);
+                console.log(numbers); // (4) [0, 1, 2, 3]
+                numbers.push(4, 5, 6);
+                console.log(numbers); // (7) [0, 1, 2, 3, 4, 5, 6]
+
+                numbers.unshift(-1); // 在数组开头插入元素 -1
+                console.log(numbers); // (8) [-1, 0, 1, 2, 3, 4, 5, 6]
+
+                numbers.pop(); // 删除数组末尾元素 6
+                console.log(numbers); // (7) [-1, 0, 1, 2, 3, 4, 5]
+
+                delete numbers[7]; // 删除数组末尾元素 6
+                console.log(numbers); // (8) [-1, 0, 1, 2, 3, 4, 5, empty]
+
+               splice(index, numbers); index 表示从第几个元素开始，numbers表示删除元素的个数
+                let nums = [0, 1, 2, 3, 4, 5, 6, 7]; // 删除元素 3，4, 5
+                nums.splice(3, 3); //从索引3开始（包含当前索引处的元素）往后删除三个元素
+                console.log(nums); // (5) [0, 1, 2, 6, 7]
+
+                nums.splice(3, 0, 3, 4, 5); // //从索引3开始（包含当前索引处的元素）传入0 表示不是删除元素
+                console.log(nums); // (8) [0, 1, 2, 3, 4, 5, 6, 7]
+
+                let nums1 = ['one', 'two', 'three'];
+                nums1.join('-');
+                console.log(nums1);
+
+                let obj123 = Object.assign(targetObj, sourceObj);
+                console.log(`The obj123 is ${JSON.stringify(obj123)}`);
+                console.log(`${JSON.stringify(obj123.category.science.math)}`);
+                // console.log(`The obj123 is ${obj123.onclick()}`);
+                let infos = {
+                    name: 'zhansan',
+                    age: 20,
+                    gender: 'male',
+                    sayHi() {
+                        console.log('hi');
+                    }
+                }
+                console.log(infos.name);
+                infos.sayHi();
+
+                let person = {};
+                person.name = 'David';
+                person['gender'] = 'male';
+
+                console.log(person.name); // david
+                console.log(person.gender); // male
+
+                Object.defineProperty(c, key, descriptor);
+                targetObj 要定义属性的对象
+                key 属性的键名
+                descriptor属性的描述符对象
+                let info = {};
+                Object.defineProperty(info, 'name', {
+                    name: 'Nicholas',
+                    writable: true //是否可以改变
+                });
+                info.name = 'david';
+                console.log(info.name); // david
+
+
+                let human = {};
+                let test = null;
+                Object.defineProperty(human, name, {
+                    get: function() {
+                        return test;
+                    },
+                    set: function(value) {
+                        test = value;
+                    }
+                });
+                human.name = 'David'; // 调用set()
+                console.log(human.name); // 调用get() 打印 David
+
+            contact()方法用于合并多个数组或元素为一个数组，可以给contact()传递一个数组，对象或元素
+            let string = 'banana';
+            let obj = {
+                name: 'zhangsan',
+                age: 20
+            }
+            let array1 = ['apple', 'peach', 'hello'];
+            let array2 = ['world', 'student', 'teacher'];
+            let array = array1.concat(string, obj, array2);
+            console.log(array); // (8) ["apple", "peach", "hello", "banana", {…}, "world", "student", "teacher"]
+
+            let ary = ['1', '2', '3', '3', '4', '5']
+            let a = new Set(ary);
+            console.log(a);
+
+            let m = new Map();
+            let b = {name: 'hello'};
+            m.set(b, 'my name');
+            console.log(m.get(b)); // my name
+            console.log(m.keys());
+
+            let a = new Set();
+            a.add(1).add(2);
+            console.log(a); // Set(2) {1, 2}
+            a.size; // 2
+            a.has(3); // false
+            a.has(2); // true
+            a.delete(2); // Set(1) {1}
+            a.clear(); // Set(0) {}
+
+          
+            let ary = [1, 2, 3, 3, 4, 5];
+            // map遍历
+            let a = new Set([...ary].map(x => x*2)); // Set(5) {2, 4, 6, 8, 10}
+            // filter 过滤
+            let b = new Set([...ary].filter(x => x/2)); // Set(5) {1, 2, 3, 4, 5}
+
+
+            let a = new Set([1, 2, 3]);
+            let b = new Set([1, 2, 3, 5]);
+            // 求并集
+            let c = new Set([...a, ...b]); // Set(4) {1, 2, 3, 5}
+            // 求交集
+            let d = new Set([...a].filter(x => b.has(x))); //  Set(3) {1, 2, 3}
+            // 求差集
+            let e = new Set([...a].filter(x => !b.has(x))); //  Set(0)
+
+            let newAry = new Set([...ary]);
+            console.log(newAry); // Set(5) {1, 2, 3, 4, 5}
+            
+            方法2
+            let c = Array.from(new Set([...ary]));
+            console.log(c); // (5) [1, 2, 3, 4, 5]
+
+            a.add([...b]);
+            console.log(a);
+            console.log(a.size);
+
+            console.log(new Set([...b]));
+            let c = a.add([...b]);
+            console.log(c);
+            a.add(2);
+            console.log(a);
+            a.add(3).add(3).add('string');
+            console.log(a);
+
+            let arr = [1,2,3,4];
+            let duplicate = [...arr];
+            console.log(`copy is : ${duplicate}`); // copy is : 1,2,3,4
+
+            let arr1 = ['apple', 'peach', 'pear', 'banana', 'cherry'];
+            let arr2 = ['bear', 'rabbit', 'sheep', 'dog', 'cat'];
+            let mergeAry = [...arr1, ...arr2];
+            console.log(`The mergeAry is ${mergeAry}`); // The mergeAry is apple,peach,pear,banana,cherry,bear,rabbit,sheep,dog,cat
+
+            let obj = {a: 1, b: 2, c: 3};
+            let copyObj = {...obj};
+            console.log(`The copyObj is: ${JSON.stringify(copyObj)}`); // The copyObj is: {"a":1,"b":2,"c":3}
+
+            let obj1 = {a: 1, b: 2, c: 3};
+            let obj2 = {d: 4, e: 5, f: 6};
+            let merge = {...obj1, ...obj2}
+            console.log(`The merge obj is ${JSON.stringify(merge)}`);// The merge obj is {"a":1,"b":2,"c":3,"d":4,"e":5,"f":6}
+
+            let numbers = [1, 2, 3];
+            let isLessThanFive = numbers.filter(x => x < 3);
+            console.log(isLessThanFive); // (2) [1, 2]
+
+            let num = [1, 2, 3, 4, 5, 6];
+            let arr = num.filter(x => x < 5);
+            console.log(arr); // (4) [1, 2, 3, 4]
+
+            
+            arr1.forEach(function(x){
+                console.log(x+1);
+            });
+            let arr1 = [1, 2, 3, 4, 5, 6];
+            arr.forEach(x => {
+                let multyTwo = x * 2; // 对数组中的每一项进行处理
+                console.log(`the result is ${multyTwo}`);
+            });
+            console.log(arr1.lastIndexOf(6));
+            console.log(arr1.slice(3));
+
+            删除数组中指定的元素
+            let arr = ['apple', 'peach', 'banana', 'oriange', 'grape']
+            arr.map((val, i) => {
+                if (val === 'oriange') {
+                    arr.splice(i, 1);
+                    console.log(arr); // (4) ["apple", "peach", "banana", "grape"]
+                }
+            });
+
+            reduce方法
+            const arr = [1, 2, 3, 4, 5, 6];
+            let total = arr.reduce((previousValue, currentValue) => previousValue + currentValue);
+            console.log(total); // 21
+
+            const companies = [
+                {name: 'Company One', category: 'retail', start: '1981', end: '2003'},
+                {name: 'Company Two', category: 'retail', start: '1988', end: '2018'},
+                {name: 'Company Three', category: 'retail', start: '1982', end: '2006'},
+                {name: 'Company Four', category: 'Auto', start: '1987', end: '2008'},
+                {name: 'Company Five', category: 'Finace', start: '1962', end: '2003'},
+                {name: 'Company Six', category: 'Technolog', start: '1975', end: '2013'},
+                {name: 'Company Seven', category: 'Logistics', start: '1963', end: '1998'},
+                {name: 'Company Eight', category: 'Automobile', start: '1968', end: '2017'},
+                {name: 'Company Nine', category: 'retail', start: '1985', end: '2015'},
+            ];
+
+            const ages = [23, 21, 15, 20, 54, 65, 45, 35, 33, 76, 58, 25, 18, 29];
+
+            for loop, callback function, arrow function,
+            map
+            forEach
+            filter
+            reduce
+            sort
+            },
+
+            passArguments(arguments) {
+                let sum = arguments.x + arguments.y + arguments.z;
+                console.log(`Sum is ${sum}`);
+
+            const companies = [
+                {name: 'Company One', category: 'Retail', start: '1981', end: '2003'},
+                {name: 'Company Two', category: 'Retail', start: '1988', end: '2018'},
+                {name: 'Company Three', category: 'Retail', start: '1982', end: '2006'},
+                {name: 'Company Four', category: 'Auto', start: '1987', end: '2008'},
+                {name: 'Company Five', category: 'Finace', start: '1962', end: '2003'},
+                {name: 'Company Six', category: 'Technolog', start: '1975', end: '2013'},
+                {name: 'Company Seven', category: 'Logistics', start: '1963', end: '1998'},
+                {name: 'Company Eight', category: 'Automobile', start: '1968', end: '2017'},
+                {name: 'Company Nine', category: 'Retail', start: '1985', end: '2015'},
+            ];
+
+            const ages = [23, 21, 15, 20, 54, 65, 45, 35, 33, 76, 58, 25, 18, 29];
+
+            //for loop, callback function, arrow function,put condition,standard for loop, dot, complete up to you, 
+
+            // const companiesName = [];
+
+            // 标准的for循环操作
+        //     for(let i = 0; i < companies.length; i++) {
+        //         console.log(companies[i]);
+        //     }
+            
+        //     //forEach 只会对数组中的每一个元素进行迭代，它不会返回新的数组。
+        //     companies.forEach(function(company) {
+        //         console.log(company);
+        //     });
+
+
+        //     // use arrow function
+        //     companies.forEach(company => {
+        //         console.log(company);
+        //     });
+        //     //一个参数可以不用括号，两个参数必须用括号括起来，然后直接写在一行，代码非常简洁直观
+        //     companies.forEach((company, index) => {console.log(company, index)});
+
+            
+        //    // filter
+        //    // (1) 标准的for循环
+        //     let canDrink = [];
+        //     for(let i = 0; i < ages.length; i++) {
+        //         if(ages[i] >= 20) {
+        //             canDrink.push(ages[i]);
+        //         }
+        //     }
+        //     console.log(canDrink); // (12) [23, 21, 20, 54, 65, 45, 35, 33, 76, 58, 25, 29]
+
+        //     //(2) filter()
+        //     const canDrink = ages.filter(function(age) {
+        //         if(age >= 20) {
+        //             return true;
+        //         }
+        //     });
+        //     console.log(canDrink);
+        //     const canDrink = ages.filter(age => age >= 20);//使用filter和箭头函数一行搞定，代码简洁高效
+
+        //     //filter()的函数体中我们还可以做一些简单的逻辑运算和判断
+        //     const retailCompanies = companies.filter(company => company.category === 'Retail');
+        //     console.log(retailCompanies);
+
+        //     const egightiesCompanies = companies.filter(company => company.start >= 1980 && company.end >= 1990);
+        //     console.log(egightiesCompanies);
+
+        //     const lastedTenYeas = companies.filter(company => (company.end - company.start >= 10));
+        //     console.log(lastedTenYeas);
+
+
+           // map
+           //标准的for()循环
+        //    for(let i = 0; i < companies.length; i++){
+        //        console.log(companies[i]);
+        //    }
+
+        //    // 使用map() 会返回一个新的数组对象,所以需要一个变量来接收它
+        //    const companies1 = companies.map(function(company) {
+        //         return company;
+        //         // return company.name
+        //    });
+        //    console.log(companies1);
+
+
+            //使用箭头函数写法
+        //     const companyNames = companies.map(company => company.name);
+        //     console.log(companyNames);
+
+        //     const ageSquare = ages.map(age => Math.sqrt(age));// 求平方根
+        //     console.log(ageSquare);
+
+        //     const ageTimesTwo = ages.map(age => age * 2); // 乘以2
+        //     console.log(ageTimesTwo);
+
+        //    //而且map可以这样链式调用，将前一个map的结果，再次处理，非常强大
+        //     const ageMap = ages
+        //         .map(age => Math.sqrt(age))
+        //         .map(age => age * 2);
+        //     console.log(ageMap);
+
+
+            // reduce()
+            let ageSum = 0;
+            //(1) 标准for()循环求和
+            // for(let i = 0; i < ages.length; i++) {
+            //     ageSum += ages[i];
+            // }
+            //(2) reduce()
+            // const ageSum1 = ages.reduce(function(total, age) {
+            //     return total + age;
+            // }, 0);
+
+            //(3) reduce()结合箭头函数
+            // const ageSum2 = ages.reduce(total, age => total + age, 0);
+
+            //(4) 链式调用
+            // const combined = ages
+            //     .map(age => age * 2)
+            //     .filter(age => age >= 30)
+            //     .sort((a, b) => a - b)
+            //     .reduce((a, b) => a + b, 0);
+
+            // console.log(combined);
+
+            //sort
+            // const sortCompany = companies.sort(function(c1, c2) {
+            //     if(c1.start > c2.start){
+            //         return 1;
+            //     } else {
+            //         return -1;
+            //     }
+            // });
+            // console.log(sortCompany);
+            // const sortedCompany = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+            // console.log(sortedCompany);
+
+            // sort ages
+            // const sortAges = ages.sort(); // 按顺序排序
+            const sortAges = ages.sort((a, b) => a - b);
+            // const sortAges = ages.sort((a, b) => b - a);
+            }-->

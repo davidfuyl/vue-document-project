@@ -1,0 +1,71 @@
+{
+    "status": "Ok",
+    "statusCode": "200",
+    "isSuccess": "true",
+    "msg": "response is successful",
+    "data": [
+      {
+        "docName": "一个陌生人女人的来信",
+        "scanDate": "2018-12-14",
+        "docOwner": "[奥地利 茨威格]",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      }, 
+      {
+        "docName": "Who Moved My Cheese?",
+        "scanDate": "2018-12-15",
+        "docOwner": "王蒙",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      }, 
+      {
+        "docName": "50 GREAT SHORT STORIES",
+        "scanDate": "2018-12-12",
+        "docOwner": "王蒙",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      }, 
+      {
+        "docName": "三国演义",
+        "scanDate": "2018-12-16",
+        "docOwner": "罗贯中",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      },
+      {
+        "docName": "三国演义",
+        "scanDate": "2018-12-16",
+        "docOwner": "罗贯中",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      }, 
+      {
+        "docName": "三国演义",
+        "scanDate": "2018-12-16",
+        "docOwner": "罗贯中",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      }, 
+      {
+        "docName": "三国演义",
+        "scanDate": "2018-12-16",
+        "docOwner": "罗贯中",
+        "modifyTime": "2018-12-10",
+        "docFrom": "网络转载",
+        "docVersion": "V1.0.1"
+      },  
+      {
+      "docName": "红楼梦",
+      "scanDate": "2018-12-09",
+      "docOwner": "曹雪芹",
+      "modifyTime": "2018-12-10",
+      "docFrom": "网络转载",
+      "docVersion": "V1.0.1"
+    }]
+}
